@@ -1,0 +1,11 @@
+.PHONY= add 
+commit_var = "https://github.com/GCoyney/Makefiles.git"
+add:
+	@git init
+	@git add .
+commit: add
+	@git commit -m "First commit"
+	@git remote add origin ${commit_var}
+	@git remote -v
+push: commit
+	@git push origin master
