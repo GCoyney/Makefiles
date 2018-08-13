@@ -1,0 +1,10 @@
+.PHONY = tester
+user = ${shell whoami}
+name = vagrant
+
+tester:
+ifeq (${name},${user})
+	${info "Logged in"}
+else
+	${error "Incorrect user."}
+endif

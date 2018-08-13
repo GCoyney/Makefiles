@@ -1,11 +1,11 @@
-.PHONY= add 
-commit_var = "https://github.com/GCoyney/Makefiles.git"
+.PHONY = add
+comment = Update
+url = https://github.com/GCoyney/Makefiles.git
+clone:
+	@git clone ${url}
 add:
-	@git init
 	@git add .
 commit: add
-	@git commit -m "First commit"
-	@git remote add origin ${commit_var}
-	@git remote -v
+	@git commit -m "${comment}"
 push: commit
-	@git push origin master
+	@git push -u origin master
